@@ -62,9 +62,9 @@ class _CategoriesScreenState extends State<CategoriesScreen>
     return AnimatedBuilder(
       animation: _animationController,
       builder:
-          (ctx, child) => Padding(
-            padding: EdgeInsets.only(
-              top: 100 - _animationController.value * 100,
+          (ctx, child) => SlideTransition(
+            position: _animationController.drive(
+              Tween(begin: Offset(0, 0.3), end: Offset(0, 0)),
             ),
             child: child,
           ),
